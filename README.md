@@ -1,5 +1,42 @@
 # Тестовое задание на основе Docker и CodeIgniter для Fullstack разработчика
 
+## Созданные файлы для выполнения задания
+
+### Созданные файлы (4):
+
+1. **`src/app/Database/Migrations/2026-03-13-065000_CreateCommentsTable.php`**
+   - Миграция для создания таблицы `comments` в базе данных
+   - Поля: id, name (email), text, date
+
+2. **`src/app/Models/CommentModel.php`**
+   - Модель для работы с таблицей comments
+   - Валидация данных (email, обязательные поля)
+   - Правила безопасности (allowedFields)
+
+3. **`src/app/Controllers/Comments.php`**
+   - Контроллер с методами:
+     - `index()` - отображение главной страницы
+     - `getComments()` - получение списка комментариев (GET)
+     - `create()` - создание комментария (POST)
+     - `delete($id)` - удаление комментария (DELETE)
+
+4. **`src/app/Views/comments/index.php`**
+   - HTML страница с Bootstrap 4
+   - Форма добавления комментария
+   - JavaScript (jQuery) для AJAX запросов
+   - Flatpickr для выбора даты
+   - Bootstrap Modal для подтверждения удаления
+
+### Измененные файлы (2):
+
+1. **`src/app/Config/Routes.php`**
+   - Добавлены роуты для работы с комментариями
+
+2. **`src/app/Config/App.php`**
+   - Исправлен baseURL (порт 80 вместо 8080)
+
+---
+
 ## Первоначальная настройка
 
 -   Устанавливаем Docker c [официального сайта](https://www.docker.com/products/docker-desktop) и [Docker Compose](https://docs.docker.com/compose/install/);
